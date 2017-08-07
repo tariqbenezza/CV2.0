@@ -136,6 +136,17 @@
         }
         /*layer*/
         
+        .layer {
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 4!important;
+            background-color: grey;
+            opacity: 0.5;
+        }
+        
         .karim:hover {
             cursor: pointer;
         }
@@ -394,6 +405,7 @@
             
             $('.karim').click(function(){
                 $('.karim-testimony').show();
+                
             });
             $('.karim-testimony-close').click(function(){
                 $('.karim-testimony').hide();
