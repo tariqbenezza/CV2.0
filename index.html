@@ -4834,7 +4834,66 @@
 
             <div data-silex-type="html" class="editable-style silex-id-1503071910584-834 html-element day" data-silex-id="silex-id-1503071910584-834">
                 <div class="silex-element-content">
-                    <p>TOTO</p>
+                    <div id="container" style="min-width: 600px; height: 450px; max-width: 1200px;"></div>
+
+                    <script type="text/javascript">
+                        Highcharts.setOptions({
+                     colors: ["#4f5d6d", "#fdfffc", "#d3bdb0", "#9a8f97", "#c3baba"]
+                    });
+                    
+                    // Build the chart
+                    Highcharts.chart('container', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie',
+                            backgroundColor: null
+                        },
+                        title: {
+                            text: ''
+                        },
+                        tooltip: {
+                            pointFormat: '<b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                                        fontFamily: '\'Verdana\', sans-serif', 
+                                        lineHeight: '18px', 
+                                        fontSize: '17px'
+                                    }
+                                },
+                               point:{
+                                    events: {
+                                        click: function() {
+                                        	if(this.options.url!=undefined){
+                                                window.open(this.options.url, '_blank');
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        series: [{
+                            name: 'Brands',
+                            data: [
+                                { name: 'Working hard for<br>the latest company above', y: 20 },
+                                { name: 'Dreaming', y: 20 },
+                                { name: 'Spending time with Noah, <br>baking with @zozobenz.<br>Happy family time', y: 20, url:'https://www.instagram.com/zozobenz/'},
+                                { name: 'Playing DOTA 2 with friends.<br>My favorite character ?<br>Support & healer', y: 10 },
+                                { name: 'Reading books.<br>Computer science literature,<br>Steve Jobs bio,<br>The wheel of time, Hyperion, etc..', y: 15},
+                                { name: 'Volunteer at Silex Labs.<br>Helping people to pivot to digital world', y: 15, url:'//www.silexlabs.org'}
+                            ]
+                        }]
+                    });
+                    </script>
                 </div>
             </div>
         </div>
